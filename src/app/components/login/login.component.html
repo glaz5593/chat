@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-content>
+        <h2>כניסה למערכת</h2>
+        <mat-error *ngIf="loginInvalid">
+          שם המשתמש והסיסמא אינם נכונים
+        </mat-error>
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="שם משתמש" (input)="onSearchChange($event.target.value)">
+          <mat-error  *ngIf="loginNameInvalid">
+            נא הזן שם משתמש תקין (LIAV)
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput type="password" placeholder="סיסמא" >
+          <mat-error  *ngIf="loginPassInvalid">
+            נא הזן סיסמא תקינה (1234)
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="onClick()">כניסה</button>
+     </mat-card-content>
+  </mat-card>
+  
